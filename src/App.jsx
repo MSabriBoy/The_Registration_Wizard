@@ -1,14 +1,11 @@
-import { useState } from 'react'
-
+import Wizard from './components/Wizard'
 import './App.css'
 
 function App() {
   
 
   return (
-    <>
-      
-    </>
+    <Wizard/>
   )
 }
 
