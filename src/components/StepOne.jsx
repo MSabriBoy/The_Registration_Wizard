@@ -1,8 +1,20 @@
+import { useState } from "react";
+
 function StepOne({ formData, setFormData, nextStep }) {
+  const [touched, setTouched] = useState({
+    firstName: false,
+    lastName: false,
+    dob: false,
+  });
+
   const isValid =
     formData.firstName.trim() !== "" &&
     formData.lastName.trim() !== "" &&
     formData.dob !== "";
+
+  const handleBlur = (field) => {
+    setTouched({ ...touched, [field]: true });
+  };
 
   return (
     <div>
@@ -14,7 +26,7 @@ function StepOne({ formData, setFormData, nextStep }) {
       </p>
 
       {/* First Name */}
-      <div className="mb-4">
+      <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700 mb-1">
           First Name
         </label>
@@ -24,13 +36,18 @@ function StepOne({ formData, setFormData, nextStep }) {
           onChange={(e) =>
             setFormData({ ...formData, firstName: e.target.value })
           }
+          onBlur={() => handleBlur("firstName")}
           className={`w-full border rounded-lg px-4 py-2 transition
-            ${formData.firstName === "" 
-              ? "border-gray-300 focus:ring-blue-500" 
-              : "border-green-500 focus:ring-green-500"}
+            ${
+              touched.firstName
+                ? formData.firstName
+                  ? "border-green-500 focus:ring-green-500"
+                  : "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-blue-500"
+            }
             focus:outline-none focus:ring-2`}
         />
-        {formData.firstName === "" && (
+        {touched.firstName && formData.firstName === "" && (
           <p className="text-red-500 text-xs mt-1">
             First name is required
           </p>
@@ -38,7 +55,7 @@ function StepOne({ formData, setFormData, nextStep }) {
       </div>
 
       {/* Last Name */}
-      <div className="mb-4">
+      <div className="mb-5">
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Last Name
         </label>
@@ -48,13 +65,18 @@ function StepOne({ formData, setFormData, nextStep }) {
           onChange={(e) =>
             setFormData({ ...formData, lastName: e.target.value })
           }
+          onBlur={() => handleBlur("lastName")}
           className={`w-full border rounded-lg px-4 py-2 transition
-            ${formData.lastName === "" 
-              ? "border-gray-300 focus:ring-blue-500" 
-              : "border-green-500 focus:ring-green-500"}
+            ${
+              touched.lastName
+                ? formData.lastName
+                  ? "border-green-500 focus:ring-green-500"
+                  : "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-blue-500"
+            }
             focus:outline-none focus:ring-2`}
         />
-        {formData.lastName === "" && (
+        {touched.lastName && formData.lastName === "" && (
           <p className="text-red-500 text-xs mt-1">
             Last name is required
           </p>
@@ -72,13 +94,18 @@ function StepOne({ formData, setFormData, nextStep }) {
           onChange={(e) =>
             setFormData({ ...formData, dob: e.target.value })
           }
+          onBlur={() => handleBlur("dob")}
           className={`w-full border rounded-lg px-4 py-2 transition
-            ${formData.dob === "" 
-              ? "border-gray-300 focus:ring-blue-500" 
-              : "border-green-500 focus:ring-green-500"}
+            ${
+              touched.dob
+                ? formData.dob
+                  ? "border-green-500 focus:ring-green-500"
+                  : "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-blue-500"
+            }
             focus:outline-none focus:ring-2`}
         />
-        {formData.dob === "" && (
+        {touched.dob && formData.dob === "" && (
           <p className="text-red-500 text-xs mt-1">
             Date of birth is required
           </p>
@@ -90,9 +117,11 @@ function StepOne({ formData, setFormData, nextStep }) {
         onClick={nextStep}
         disabled={!isValid}
         className={`w-full py-2 rounded-lg font-medium transition
-          ${isValid 
-            ? "bg-blue-600 text-white hover:bg-blue-700" 
-            : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
+          ${
+            isValid
+              ? "bg-blue-600 text-white hover:bg-blue-700"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+          }`}
       >
         Continue →
       </button>
