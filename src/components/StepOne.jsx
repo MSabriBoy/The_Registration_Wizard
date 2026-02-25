@@ -143,7 +143,7 @@ function StepOne({ formData, setFormData, nextStep }) {
                 disabled={!isValid}
                 className={`w-full py-2 rounded-lg font-medium transition
           ${isValid
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
+                        ? "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer active:scale-95 transition"
                         : "bg-gray-300 text-gray-500 cursor-not-allowed"
                     }`}
             >

@@ -234,7 +234,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
           type="button"
           onClick={prevStep}
           className="w-1/2 bg-gray-300 py-2 rounded-lg 
-                     hover:bg-gray-400 transition duration-200 font-medium"
+                     hover:bg-gray-400 transition duration-200 font-medium cursor-pointer active:scale-95 transition"
         >
           ← Back
         </button>
@@ -246,7 +246,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
           className={`w-1/2 py-2 rounded-lg font-medium transition
             ${
               isFormValid
-                ? "bg-blue-600 text-white hover:bg-blue-700"
+                ? "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer active:scale-95 transition"
                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
             }`}
         >

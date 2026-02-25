@@ -45,7 +45,7 @@ function StepThree({ formData, prevStep, handleSubmit }) {
           type="button"
           onClick={prevStep}
           className="w-1/2 bg-gray-300 py-2 rounded-lg 
-                     hover:bg-gray-400 transition duration-200 font-medium"
+                     hover:bg-gray-400 transition duration-200 font-medium cursor-pointer active:scale-95 transition"
         >
           ← Back
         </button>
@@ -54,7 +54,7 @@ function StepThree({ formData, prevStep, handleSubmit }) {
           type="button"
           onClick={handleSubmit}
           className="w-1/2 bg-green-600 text-white py-2 rounded-lg 
-                     hover:bg-green-700 transition duration-200 font-medium"
+                     hover:bg-green-700 transition duration-200 font-medium cursor-pointer active:scale-95 transition"
         >
           Submit ✓
         </button>
