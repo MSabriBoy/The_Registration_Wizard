@@ -24,8 +24,9 @@ function Wizard() {
   };
 
   return (
-    <div>
-      {step === 1 && (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div  className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md">
+     {step === 1 && (
         <StepOne
           formData={formData}
           setFormData={setFormData}
@@ -51,6 +52,7 @@ function Wizard() {
       )}
 
       {step === 4 && <Success />}
+    </div>
     </div>
   );
 }

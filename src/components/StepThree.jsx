@@ -1,20 +1,64 @@
 function StepThree({ formData, prevStep, handleSubmit }) {
   return (
     <div>
-      <h2>Step 3: Review & Submit</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-1">
+        Review & Confirm
+      </h2>
+      <p className="text-gray-500 mb-6 text-sm">
+        Please verify your details before submitting.
+      </p>
 
-      <p>First Name: {formData.firstName}</p>
-      <p>Last Name: {formData.lastName}</p>
-      <p>DOB: {formData.dob}</p>
-      <p>Email: {formData.email}</p>
+      <div className="bg-gray-50 rounded-xl p-5 mb-6 space-y-4">
 
-      <button type="button" onClick={prevStep}>
-        Back
-      </button>
+        <div className="flex justify-between border-b pb-2">
+          <span className="text-gray-600 text-sm">First Name</span>
+          <span className="font-medium text-gray-800">
+            {formData.firstName || "-"}
+          </span>
+        </div>
 
-      <button type="button" onClick={handleSubmit}>
-        Submit
-      </button>
+        <div className="flex justify-between border-b pb-2">
+          <span className="text-gray-600 text-sm">Last Name</span>
+          <span className="font-medium text-gray-800">
+            {formData.lastName || "-"}
+          </span>
+        </div>
+
+        <div className="flex justify-between border-b pb-2">
+          <span className="text-gray-600 text-sm">Date of Birth</span>
+          <span className="font-medium text-gray-800">
+            {formData.dob || "-"}
+          </span>
+        </div>
+
+        <div className="flex justify-between border-b pb-2">
+          <span className="text-gray-600 text-sm">Email</span>
+          <span className="font-medium text-gray-800">
+            {formData.email || "-"}
+          </span>
+        </div>
+
+      </div>
+
+      <div className="flex gap-3">
+        <button
+          type="button"
+          onClick={prevStep}
+          className="w-1/2 bg-gray-300 py-2 rounded-lg 
+                     hover:bg-gray-400 transition duration-200 font-medium"
+        >
+          ← Back
+        </button>
+
+        <button
+          type="button"
+          onClick={handleSubmit}
+          className="w-1/2 bg-green-600 text-white py-2 rounded-lg 
+                     hover:bg-green-700 transition duration-200 font-medium"
+        >
+          Submit ✓
+        </button>
+      </div>
     </div>
   );
 }
