@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function StepTwo({ formData, setFormData, nextStep, prevStep }) {
   const [showPassword, setShowPassword] = useState(false);
+const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [touched, setTouched] = useState({
     email: false,
@@ -75,7 +76,7 @@ function StepTwo({ formData, setFormData, nextStep, prevStep }) {
             setFormData({ ...formData, password: e.target.value })
           }
           onBlur={() => handleBlur("password")}
-          className={`w-full border rounded-lg px-4 py-2 pr-12 transition
+          className={`w-full border rounded-lg px-4 py-2 pr-12 transition"
             ${
               touched.password
                 ? isPasswordValid
@@ -91,7 +92,49 @@ function StepTwo({ formData, setFormData, nextStep, prevStep }) {
           onClick={() => setShowPassword(!showPassword)}
           className="absolute right-3 top-9 text-sm text-gray-500 hover:text-gray-700"
         >
-          {showPassword ? "Hide" : "Show"}
+          {showPassword ? (
+      // Eye Off Icon
+    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="h-5 w-5"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="#000"
+  strokeWidth="2"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M3 3l18 18"
+  />
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M10.584 10.587a2 2 0 002.828 2.828M9.88 5.09A9.956 9.956 0 0112 5c4.478 0 8.268 2.943 9.542 7a9.956 9.956 0 01-4.132 5.12M6.53 6.53A9.956 9.956 0 002.458 12c1.274 4.057 5.064 7 9.542 7 1.31 0 2.56-.25 3.705-.705"
+  />
+</svg>
+    ) : (
+      // Eye Icon
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-black"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="#000"
+        strokeWidth="2"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z"
+        />
+      </svg>
+    )}
         </button>
 
         {touched.password && !isPasswordValid && (
@@ -101,37 +144,89 @@ function StepTwo({ formData, setFormData, nextStep, prevStep }) {
         )}
       </div>
 
-      {/* Confirm Password */}
-      <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Confirm Password
-        </label>
-        <input
-          type={showPassword ? "text" : "password"}
-          value={formData.confirmPassword}
-          onChange={(e) =>
-            setFormData({
-              ...formData,
-              confirmPassword: e.target.value,
-            })
-          }
-          onBlur={() => handleBlur("confirmPassword")}
-          className={`w-full border rounded-lg px-4 py-2 transition
-            ${
-              touched.confirmPassword
-                ? doPasswordsMatch
-                  ? "border-green-500 focus:ring-green-500"
-                  : "border-red-500 focus:ring-red-500"
-                : "border-gray-300 focus:ring-blue-500"
-            }
-            focus:outline-none focus:ring-2`}
+      <div className="mb-6 relative">
+  <label className="block text-sm font-medium text-gray-700 mb-1">
+    Confirm Password
+  </label>
+  <input
+    type={showConfirmPassword ? "text" : "password"}
+    value={formData.confirmPassword}
+    onChange={(e) =>
+      setFormData({
+        ...formData,
+        confirmPassword: e.target.value,
+      })
+    }
+    onBlur={() => handleBlur("confirmPassword")}
+    className={`w-full border rounded-lg px-4 py-2 pr-12 transition
+      ${
+        touched.confirmPassword
+          ? doPasswordsMatch
+            ? "border-green-500 focus:ring-green-500"
+            : "border-red-500 focus:ring-red-500"
+          : "border-gray-300 focus:ring-blue-500"
+      }
+      focus:outline-none focus:ring-2`}
+  />
+
+  <button
+    type="button"
+    onClick={() =>
+      setShowConfirmPassword(!showConfirmPassword)
+    }
+    className="absolute right-3 top-9 text-sm text-gray-500 hover:text-gray-700"
+  >
+    {showConfirmPassword ? (
+      // Eye Off Icon
+     <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="h-5 w-5"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="#000"
+  strokeWidth="2"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M3 3l18 18"
+  />
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M10.584 10.587a2 2 0 002.828 2.828M9.88 5.09A9.956 9.956 0 0112 5c4.478 0 8.268 2.943 9.542 7a9.956 9.956 0 01-4.132 5.12M6.53 6.53A9.956 9.956 0 002.458 12c1.274 4.057 5.064 7 9.542 7 1.31 0 2.56-.25 3.705-.705"
+  />
+</svg>
+    ) : (
+      // Eye Icon
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-black"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="#000"
+        strokeWidth="2"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
         />
-        {touched.confirmPassword && !doPasswordsMatch && (
-          <p className="text-red-500 text-xs mt-1">
-            Passwords do not match
-          </p>
-        )}
-      </div>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z"
+        />
+      </svg>
+    )}
+  </button>
+
+  {touched.confirmPassword && !doPasswordsMatch && (
+    <p className="text-red-500 text-xs mt-1">
+      Passwords do not match
+    </p>
+  )}
+</div>
 
       {/* Buttons */}
       <div className="flex gap-3">
