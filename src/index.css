@@ -14,3 +14,14 @@
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-in-out;
 }
+
+/* Hide Edge/IE password reveal icon */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Hide Chrome default password icon */
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none;
+}
