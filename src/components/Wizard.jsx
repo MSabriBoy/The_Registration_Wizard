@@ -26,32 +26,37 @@ function Wizard() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
     <div  className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md">
-     {step === 1 && (
-        <StepOne
-          formData={formData}
-          setFormData={setFormData}
-          nextStep={nextStep}
-        />
-      )}
+    <div
+  key={step}
+  className="transition-all duration-300 ease-in-out animate-fadeIn"
+>
+  {step === 1 && (
+    <StepOne
+      formData={formData}
+      setFormData={setFormData}
+      nextStep={nextStep}
+    />
+  )}
 
-      {step === 2 && (
-        <StepTwo
-          formData={formData}
-          setFormData={setFormData}
-          nextStep={nextStep}
-          prevStep={prevStep}
-        />
-      )}
+  {step === 2 && (
+    <StepTwo
+      formData={formData}
+      setFormData={setFormData}
+      nextStep={nextStep}
+      prevStep={prevStep}
+    />
+  )}
 
-      {step === 3 && (
-        <StepThree
-          formData={formData}
-          prevStep={prevStep}
-          handleSubmit={handleSubmit}
-        />
-      )}
+  {step === 3 && (
+    <StepThree
+      formData={formData}
+      prevStep={prevStep}
+      handleSubmit={handleSubmit}
+    />
+  )}
 
-      {step === 4 && <Success />}
+  {step === 4 && <Success />}
+</div>
     </div>
     </div>
   );
