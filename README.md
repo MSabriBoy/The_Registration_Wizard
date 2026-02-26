@@ -6,7 +6,7 @@ This project demonstrates advanced form handling techniques including state lift
 
 ## 🔗 Live Demo
 
-
+[the-registration-wizard.vercel.app](https://the-registration-wizard.vercel.app/)
 
 ## 🚀 Features
 
