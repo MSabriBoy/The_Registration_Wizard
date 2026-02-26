@@ -1,16 +1,93 @@
-# React + Vite
+# 🧙 Multi-Step Registration Wizard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive multi-step registration form built using React and Tailwind CSS, focused on clean UI, real-time validation, and smooth user experience.
 
-Currently, two official plugins are available:
+This project demonstrates advanced form handling techniques including state lifting, controlled components, validation logic, and step-based navigation without using React Router.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Multi-step registration wizard (3-step flow)
+- Persistent form data across steps
+- Real-time input validation
+- Email validation using Regex
+- Password minimum length validation (8+ characters)
+- Confirm password match validation
+- 18+ age validation using JavaScript Date logic
+- Disabled navigation buttons until valid input
+- Custom SVG password visibility toggle
+- Smooth animated transitions between steps
+- Dynamic progress bar indicator
+- Success screen after submission
+- Fully responsive and modern UI
+
+## 🛠 Tech Stack
+
+- React (Functional Components & Hooks)
+- JavaScript (ES6+)
+- Tailwind CSS
+- Conditional Rendering
+- Controlled Components
+- State Lifting
+
+## 🎯 Project Objective
+
+### The goal of this project is to:
+- Implement a user-friendly multi-step onboarding experience
+- Handle form state efficiently across multiple components
+- Provide real-time validation feedback
+- Improve UX through smooth transitions and progress tracking
+- Build a clean, professional interface using Tailwind CSS
+
+## 📸 Screenshots
+
+### Desktop Views
+<p align="center">
+  <img src="/public/pic1.jpeg" width="700"/>
+</p>
+<p align="center">
+  <img src="/public/pic2.jpeg" width="700"/>
+</p>
+<p align="center">
+  <img src="/public/pic3.jpeg" width="700"/>
+</p>
+<p align="center">
+  <img src="/public/pic4.png" width="700"/>
+</p>
+
+## ⚙️ Installation & Setup
+### Clone the repository:
+``` bash
+git clone https://github.com/MSabriBoy/The_Registration_Wizard.git
+```
+### Navigate into the project directory:
+``` bash
+cd The_Registration_Wizard
+```
+### Install dependencies:
+``` bash 
+npm install
+```
+### Run the development server:
+``` bash 
+npm run dev
+```
+
+## 🧪 How It Works
+
+- Step 1: Personal Information
+- Step 2: Account Details with validation
+- Step 3: Review & Confirm
+- Success screen displayed after submission
+- All form data is preserved when navigating between steps.
+
+## 📌 Key Highlights
+
+- Clean separation of components
+- Centralized form state management
+- Validation-driven navigation control
+- UX-focused design decisions
+- Responsive layout for different screen sizes
