@@ -42,6 +42,22 @@ This project demonstrates advanced form handling techniques including state lift
 - Improve UX through smooth transitions and progress tracking
 - Build a clean, professional interface using Tailwind CSS
 
+## 🧪 How It Works
+
+- Step 1: Personal Information
+- Step 2: Account Details with validation
+- Step 3: Review & Confirm
+- Success screen displayed after submission
+- All form data is preserved when navigating between steps.
+
+## 📌 Key Highlights
+
+- Clean separation of components
+- Centralized form state management
+- Validation-driven navigation control
+- UX-focused design decisions
+- Responsive layout for different screen sizes
+
 ## 📸 Screenshots
 
 ### Desktop Views
@@ -76,18 +92,3 @@ npm install
 npm run dev
 ```
 
-## 🧪 How It Works
-
-- Step 1: Personal Information
-- Step 2: Account Details with validation
-- Step 3: Review & Confirm
-- Success screen displayed after submission
-- All form data is preserved when navigating between steps.
-
-## 📌 Key Highlights
-
-- Clean separation of components
-- Centralized form state management
-- Validation-driven navigation control
-- UX-focused design decisions
-- Responsive layout for different screen sizes
